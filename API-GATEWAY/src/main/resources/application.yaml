@@ -31,10 +31,11 @@ spring:
           predicates:
             - Path=/products/**
 
-        - id: User
-          uri: http://localhost:8080 # replace with the appropriate URL
+               - id: User
+          uri:lb: USERS
           predicates:
-            - Path=/user/**
+            - Path=user/verify/code/**
           locator:
             enabled: true
+            lowerCaseServiceId: true # replace with the appropriate service ID
             lowerCaseServiceId: true # replace with the appropriate service ID
